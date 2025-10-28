@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/xandercary/PA3/wsu-cpts-223-fall-2025-pa3-inventory-management-WSU_CPTS223_PA3",
+      "program": "/Users/xandercary/PA3/wsu-cpts-223-fall-2025-pa3-inventory-management-WSU_CPTS223_PA3/build/Debug/outDebug"
+    }
+  ]
+}
