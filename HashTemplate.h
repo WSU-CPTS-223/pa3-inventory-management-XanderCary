@@ -1,4 +1,5 @@
 #include<iostream>
+#include <cstddef>
 
 using std::hash;
 
@@ -30,12 +31,13 @@ size_t size() const;
 size_t numElements() const;
 bool empty();
 void push_back(const T& value);
-T& operator[](size_t index) const;
-const T& operator[](size_t index) const;
-
+T& operator[](size_t index);     
+const T& operator[](size_t index) const; 
 
 
 };
+
+
 
 
 template <typename K, typename V>
