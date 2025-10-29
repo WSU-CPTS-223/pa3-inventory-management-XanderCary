@@ -2,6 +2,7 @@
 
 
 using std::hash;
+using std::move;
 
 //DynamicArray functions
 
@@ -150,12 +151,25 @@ HashTable<K, V>::~HashTable(){
 
 template<typename K, typename V>
 void HashTable<K, V>::rehash(){
-size_t newSize = table.size() * 2;
-DynamicArray<pair<K, V>> newArr;
-for(size_t i = 0; i < size){
-    DynamicArray<pair<K, V>>& oldArr = table[i];
-    //I am here
+    size_t newSize = table.size() * 2;
+    DynamicArray<pair<K, V>> newArr;
+    newArr.resize(newSize);
+    for(size_t i = 0; i < size){
+      DynamicArray<pair<K, V>>& oldArr = table[i];
+     for(size_t j = 0; j < oldArr.size(); ++j){
+         const K& key = oldArr[j].first;
+         const V& key = oldArr[j].second;
+
+         size_t newIndex = hash,K.{}(key) % newSize;
+         newArr[newIndex].push_back({key, value});
+      }
+    }
+    table = move(newArr);
 }
+
+template<typename K, typename V>
+float HashTable<K, V>::loadFactor() const{
+return static_cast<float>(numElements)/size;
 }
 
 
@@ -181,4 +195,17 @@ void HashTable<K, V>::insert(const K& key, const V& value){
         rehash();
     }
 
+}
+
+template<typename K, typename V>
+bool HashTable<K, V>::find(const K& key, V& value) const{
+    size_t index = hash<K>{}(key) % table.size(); // find the index the id would be at
+    DynamicArray<pair<K,V>>& traversal = table[index];
+    for(size_t i = 0; i < traversal; ++i){
+        if(traversal[i].first == key) {
+            value = traversal[i].second;
+            return true;
+        }
+    }
+    return false;
 }

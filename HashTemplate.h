@@ -60,7 +60,6 @@ HashTable(size_t startSize = 10);
 
 void insert(const K& key, const V& value);
 bool find(const K& key, V& value) const;
-void remove(const K& key);
 
 float loadFactor() const;
 size_t numElements() const;

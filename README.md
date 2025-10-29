@@ -22,4 +22,6 @@ Finished all of the Dynamic Array functions now I am starting to get into the ha
 In the struct I am deciding to do another dynamic array of all of the product categories I am going to use that to loop through
 when I am adding the product to all of its categorys indexes if that is the right wording for it
 
-Now defining the HashTable functions; currently regretting putting dynamic array and hash table in the same files they are just big now and it makes me sad about poor design 
+Now defining the HashTable functions; currently regretting putting dynamic array and hash table in the same files they are just big now and it makes me sad about poor design.
+
+While making the find for the HashTable I have decided I think that using an open hash for both uniq id look up and category find becuase it seems a lot easier to impliment instead of having to worry about probing 
