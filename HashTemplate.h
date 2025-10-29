@@ -1,7 +1,9 @@
 #include<iostream>
 #include <cstddef>
+#include"product.h"
 
 using std::hash;
+using std::pair;
 
 //Dynamic array
 template <typename T>
@@ -42,7 +44,27 @@ const T& operator[](size_t index) const;
 
 template <typename K, typename V>
 class HashTable {
+private:
 
+DynamicArray<DynamicArray<pair<K, V>>> table;
+
+size_t numElements;
+float maxLoadFactor;
+size_t getIndex(const K& key) const;
+void rehash();
+
+public:
+
+HashTable(size_t startSize = 10);
+~HashTable();
+
+void insert(const K& key, const V& value);
+bool find(const K& key, V& value) const;
+void remove(const K& key);
+
+float loadFactor() const;
+size_t numElements() const;
+size_t size();
 
 
 };

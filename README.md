@@ -16,3 +16,10 @@ and add a single item to multiple indexs so it appears in all of its categorys l
 The second will be a close hash using its id number so we have O(1) look up and insert times
 
 My next problem to think about will be collision handeling and resizing but I want to get started writting the above before then so I get a feel for it. I have realized I need to think about this now because I need my array so because std::hash.
+
+Finished all of the Dynamic Array functions now I am starting to get into the hash table but I am going to create the product struct first while its on my mind, I imagine I will need have an idea of how that will look when I start defining my Hash Table functions
+
+In the struct I am deciding to do another dynamic array of all of the product categories I am going to use that to loop through
+when I am adding the product to all of its categorys indexes if that is the right wording for it
+
+Now defining the HashTable functions; currently regretting putting dynamic array and hash table in the same files they are just big now and it makes me sad about poor design 

@@ -1,5 +1,10 @@
 #include"HashTemplate.h"
 
+
+using std::hash;
+
+//DynamicArray functions
+
 template <typename T>
 DynamicArray<T>::DynamicArray(){
 data = nullptr;
@@ -136,5 +141,44 @@ const T& DynamicArray<T>::operator[](size_t index) const { // trailing const her
     return data[index];
 }
 
+//Start of HashTable functions
+
+template<typename K, typename V>
+HashTable<K, V>::~HashTable(){
+
+}
+
+template<typename K, typename V>
+void HashTable<K, V>::rehash(){
+size_t newSize = table.size() * 2;
+DynamicArray<pair<K, V>> newArr;
+for(size_t i = 0; i < size){
+    DynamicArray<pair<K, V>>& oldArr = table[i];
+    //I am here
+}
+}
 
 
+
+template<typename K, typename V>
+void HashTable<K, V>::insert(const K& key, const V& value){
+    //hash to find index
+    size_t index = hash<K>{}(key) % table.size;
+    //make sure this isnt already in the table
+    DynamicArray<pair<K, V>>& bucket = table[index];
+    for(size_t i = 0; i < bucket.size(); ++i){
+        if(bucket[i].first == key){
+            bucket[i].second = value;
+            return;
+        }
+    }
+    //no dupes found
+    bucket.push_back({key, value});
+    ++numElements;
+
+    //check load facotor wasnt exceeded
+    if(loadFactor() > maxLoadFactor){
+        rehash();
+    }
+
+}
