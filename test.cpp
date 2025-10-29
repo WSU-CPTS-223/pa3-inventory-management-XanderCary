@@ -5,3 +5,5 @@
 #include"HashTemplate.h"
 #include"product.h"
 
+Product testProd;
+
