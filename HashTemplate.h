@@ -1,3 +1,6 @@
+#ifndef HASHTEMPLATE_H
+#define HASHTEMPLATE_H
+
 #include<iostream>
 #include <cstddef>
 #include"product.h"
@@ -29,8 +32,8 @@ DynamicArray(DynamicArray&& other);
 DynamicArray& operator=(const DynamicArray& other);
 DynamicArray& operator=(DynamicArray&& other);
 
-size_t size() const;
-size_t numElements() const;
+size_t getSize() const;
+size_t getNumElements() const;
 bool empty();
 void push_back(const T& value);
 T& operator[](size_t index);     
@@ -62,8 +65,10 @@ void insert(const K& key, const V& value);
 bool find(const K& key, V& value) const;
 
 float loadFactor() const;
-size_t numElements() const;
-size_t size();
+size_t getNumElements() const;
+size_t getSize();
 
 
 };
+
+#endif //HASHTEMPLATE_H

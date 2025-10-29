@@ -15,4 +15,4 @@ struct Product {
     Product() = default;
 };
 
-#endif
+#endif //PRODUCT_H

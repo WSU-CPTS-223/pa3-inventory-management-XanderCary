@@ -1,3 +1,4 @@
+
 #include"HashTemplate.h"
 
 
@@ -100,13 +101,13 @@ return *this;
 
 
 template <typename T>
-size_t DynamicArray<T>::size() const{
+size_t DynamicArray<T>::getSize() const{
 return size;
 }
 
 
 template <typename T>
-size_t DynamicArray<T>::numElements() const {
+size_t DynamicArray<T>::getNumElements() const {
     return numElements;
 }
 
@@ -209,3 +210,15 @@ bool HashTable<K, V>::find(const K& key, V& value) const{
     }
     return false;
 }
+
+
+template<typename K, typename V>
+size_t HashTable<K, V>::getSize() {
+    return size;
+}
+
+template<typename K, typename V>
+size_t HashTable<K, V>::getNumElements() const {
+    return numElements;
+}
+
